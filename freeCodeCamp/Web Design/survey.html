@@ -1,0 +1,50 @@
+<!-- 
+
+Hello Camper!
+
+Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Freecodecamp</title>
+    <link rel="stylesheet" href="surveycss.css" type="text/css">
+</head>
+<body>
+  <h1 id="title">Try survey :)</h1>
+    <p id="description">This survey serves as a simple test to my freecodeCamp studies.</p>
+    <form action="" id="survey-form">
+      <label for="name" id="name-label">Form to enter your name </label>
+    <input type="text" name="give-name" placeholder="Example Johnson" id="name" required>
+        <br>
+      <label for="email"  id="email-label">Form to enter your email </label>
+        <input type="email" name="email" placeholder="example.123@gmail.com" id="email" required>
+      <br>
+      <label for="number"  id="number-label">Form to enter a number </label>
+        <input type="number" name="number" min="0" max="30" placeholder="28" list="dropdown" id="number">
+      <datalist id="dropdown">
+        <option value="18">
+        <option value="11">
+        <option value="5">
+      </datalist>
+      <br>
+      <label> Cool <input type="radio" name="quality" value="cool"></label>
+      <label> Kind of cool <input type="radio" name="quality" value="kind-of-cool"></label>
+      <label> Not cool <input type="radio" name="quality" value="not-cool"></label>
+      <br>
+      <label>1<input type="checkbox" value="1"></label>
+      <label>2<input type="checkbox" value="2"></label>
+      <br><br>
+      <textarea name="story" rows="4" cols="27">
+      </textarea>
+      <br>
+      <input type="submit" id="submit" value="Enviar">
+    </form>
+</body>
+</html>
