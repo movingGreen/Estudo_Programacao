@@ -149,4 +149,7 @@ def testeSeg():
     x = input("Qual é o seu nome?\n")
     print("Olá {}" .format(x))
 
-testeSeg()
+
+
+a = 2.123124122
+print(f"{a:.4f}")
