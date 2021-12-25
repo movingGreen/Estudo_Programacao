@@ -1,3 +1,4 @@
+// Declara as variáveis e inicia elas pegando os elementos do HTML e do armazenamento local
 let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
