@@ -1,5 +1,10 @@
 
 
+from cmath import pi
+
+import numpy, math
+
+
 def comTryExcept () :
     print ("testando a impressão de texto")
     testeTry = input('Digite um número: \n')
@@ -150,6 +155,48 @@ def testeSeg():
     print("Olá {}" .format(x))
 
 
+def testeInput():
+    a = 2.123124122
+    print(f"{a:.4f}")
 
-a = 2.123124122
-print(f"{a:.4f}")
+    A = int(input())
+    B = int(input())
+
+    print(f"X = {A+B}") 
+
+def areaCirculo():
+    PI = 3.14159
+    raio = float(input())
+    areaDoCirculo = PI * (raio * raio) #math.pow(raio,2)
+    print(f"A={areaDoCirculo:.4f}")
+    print(2 ** 1 )    
+
+def salarioFuncionario(): 
+    numeroDoFuncionario = int(input())
+    horasTrabalhadas = int(input())
+    valorPorHora = float(input())
+
+    print(f"NUMBER = {numeroDoFuncionario}")
+    print(f"SALARY = U$ {horasTrabalhadas * valorPorHora:.2f}")
+    
+#nomeVendedor = input()
+#salarioFixo = float(input())
+#totalVendas = float(input())
+#comissaoVendas = salarioFixo + (totalVendas * 0.85)
+#print(f"TOTAL = R$ {comissaoVendas:.2f}")
+
+def calculoSimples():
+    dadosPeça1 = input().split()
+
+    codigoPeça1 = int(dadosPeça1[0])
+    quantidadesPeça1 = int(dadosPeça1[1])
+    preçoUnitarioPeça1 = float(dadosPeça1[2])
+
+    dadosPeça2 = input().split()
+    codigoPeça2 = int(dadosPeça1[0])
+    quantidadesPeça2 = int(dadosPeça2[1])
+    preçoUnitarioPeça2 = float(dadosPeça2[2])
+
+    total = (quantidadesPeça1*preçoUnitarioPeça1)+(quantidadesPeça2*preçoUnitarioPeça2)
+
+    print(f"VALOR A PAGAR: R$ {total:.2f}")
