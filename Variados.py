@@ -186,6 +186,7 @@ def salarioFuncionario():
 #print(f"TOTAL = R$ {comissaoVendas:.2f}")
 
 def calculoSimples():
+    
     dadosPeça1 = input().split()
 
     codigoPeça1 = int(dadosPeça1[0])
@@ -200,3 +201,16 @@ def calculoSimples():
     total = (quantidadesPeça1*preçoUnitarioPeça1)+(quantidadesPeça2*preçoUnitarioPeça2)
 
     print(f"VALOR A PAGAR: R$ {total:.2f}")
+    
+def retornarMaiorEntreDoisValores(valorA,valorB):
+    maiorValor = (valorA+valorB+abs(valorA-valorB))/2
+    return maiorValor
+
+valores = input().split()
+valores[0] = int(valores[0])
+valores[1] = int(valores[1])
+valores[2] = int(valores[2])
+maiorEntreAB = retornarMaiorEntreDoisValores(valores[0],valores[1])
+maiorTotal = retornarMaiorEntreDoisValores(maiorEntreAB,valores[2])
+
+print(f"{maiorTotal:.0f} eh o maior")
