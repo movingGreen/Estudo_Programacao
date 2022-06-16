@@ -59,3 +59,46 @@ function multiplyNumeric(menu) {
 // multiplyNumeric(menu);
 // console.log(menu);
 
+let calculator = {
+    a: 0,
+    b: 0,
+    read(valorA, valorB) {
+        this.a = valorA;
+        this.b = valorB;
+    },
+    sum() {
+        return this.a + this.b;
+    },
+    mul() {
+        return this.a * this.b;
+    }
+    };
+  
+// calculator.read(3, 4);
+// alert( calculator.sum() );
+// alert( calculator.mul() );
+
+let ladder = {
+    step: 0,
+    up() {
+      this.step++;
+      return this;
+    },
+    down() {
+      this.step--;
+      return this;
+    },
+    showStep: function() { // shows the current step
+      alert( this.step );
+      return this;
+    }
+};
+
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep(); // 1
+// ladder.down();
+// ladder.showStep(); // 0
+
+ladder.up().up().up().down().showStep().down().showStep();
