@@ -9,24 +9,55 @@ function App() {
   const [posicao, setPosicao] = useState('');
   const [salario, setSalario] = useState(0);
 
+ 
   return (
     <div className="App">
       <div className="Informacoes">
-        <label for="nome">Nome do funcionario:</label>
-        <input type="text" name="nome"></input>
+        <label htmlFor="nome">Nome do funcionario:</label>
+        <input 
+          type="text" 
+          name="nome" 
+          onChange={(event) => {
+            setNome(event.target.value);
+          }}
+        /> 
         <br/><br/>
-        <label for="idade">Idade:</label>
-        <input type="number" name="idade"></input>
+        <label htmlFor="idade">Idade:</label>
+        <input 
+          type="number" 
+          name="idade"
+          onChange={(event) => {
+            setIdade(event.target.value);
+          }}
+        />
         <br/><br/>
-        <label for="nacionalidade">Nacionalidade:</label>
-        <input type="text" name="nacionalidade"></input>
+        <label htmlFor="nacionalidade">Nacionalidade:</label>
+        <input 
+          type="text" 
+          name="nacionalidade" 
+          onChange={(event) => {
+            setNacionalidade(event.target.value);
+          }}
+        />
         <br/><br/>
-        <label for="posicao">Posição:</label>
-        <input type="text" name="posicao"></input>
+        <label htmlFor="posicao">Posição:</label>
+        <input 
+          type="text" 
+          name="posicao" 
+          onChange={(event) => {
+            setPosicao(event.target.value);
+          }}
+        />
         <br/><br/>
-        <label for="salario">Valor do salário (mês):</label>
-        <input type="number" name="salario"></input>
-        <button>Adicionar funcionario</button>
+        <label htmlFor="salario">Valor do salário (mês):</label>
+        <input 
+          type="number" 
+          name="salario"
+          onChange={(event) => {
+            setSalario(event.target.value);
+          }}
+        />
+        <button onClick={displayInfo}>Adicionar funcionario</button>
       </div>
     </div>
   );
