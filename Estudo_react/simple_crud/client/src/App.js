@@ -20,8 +20,7 @@ function App() {
           onChange={(event) => {
             setNome(event.target.value);
           }}
-        /> 
-        <br/><br/>
+        />
         <label htmlFor="idade">Idade:</label>
         <input 
           type="number" 
@@ -30,7 +29,6 @@ function App() {
             setIdade(event.target.value);
           }}
         />
-        <br/><br/>
         <label htmlFor="nacionalidade">Nacionalidade:</label>
         <input 
           type="text" 
@@ -39,7 +37,6 @@ function App() {
             setNacionalidade(event.target.value);
           }}
         />
-        <br/><br/>
         <label htmlFor="posicao">Posição:</label>
         <input 
           type="text" 
@@ -48,7 +45,6 @@ function App() {
             setPosicao(event.target.value);
           }}
         />
-        <br/><br/>
         <label htmlFor="salario">Valor do salário (mês):</label>
         <input 
           type="number" 
@@ -57,7 +53,7 @@ function App() {
             setSalario(event.target.value);
           }}
         />
-        <button onClick={displayInfo}>Adicionar funcionario</button>
+        <button>Adicionar funcionario</button>
       </div>
     </div>
   );
