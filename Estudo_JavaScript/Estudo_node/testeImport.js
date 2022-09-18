@@ -1,2 +1,3 @@
 const dados = require("./testeGet");
-console.log(dados);
+
+dados.on("done", () => {});

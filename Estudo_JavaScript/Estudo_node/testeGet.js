@@ -10,10 +10,10 @@ const resposta = https.get(
       dados += parte;
     });
     resposta.on("end", () => {
-      // const parseDados = JSON.parse(dados);
-      // console.log(dados);
+      const parseDados = JSON.parse(dados);
+      console.log(dados);
     });
   }
 );
 
-module.exports.dados;
+// module.exports.dados;
