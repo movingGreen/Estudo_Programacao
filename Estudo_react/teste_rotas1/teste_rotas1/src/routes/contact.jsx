@@ -1,12 +1,12 @@
 import { Form, useLoaderData } from "react-router-dom";
-import {getContact } from "../Contacts"
+import { getContact } from "../Contacts";
 
 export async function loader({ params }) {
   return getContact(params.contactId);
 }
 
 export default function Contact() {
-  const contact = useLoaderData()
+  const contact = useLoaderData();
 
   // const contact = {
   //   first: "Your",
@@ -43,8 +43,7 @@ export default function Contact() {
           <p>
             <a
               target="_blank"
-              href={`https://twitter.com/${contact.twitter}`}
-            >
+              href={`https://twitter.com/${contact.twitter}`}>
               {contact.twitter}
             </a>
           </p>
@@ -62,14 +61,11 @@ export default function Contact() {
             onSubmit={(event) => {
               if (
                 // eslint-disable-next-line no-restricted-globals
-                !confirm(
-                  "Please confirm you want to delete this record."
-                )
+                !confirm("Please confirm you want to delete this record.")
               ) {
                 event.preventDefault();
               }
-            }}
-          >
+            }}>
             <button type="submit">Delete</button>
           </Form>
         </div>
@@ -86,12 +82,7 @@ function Favorite({ contact }) {
       <button
         name="favorite"
         value={favorite ? "false" : "true"}
-        aria-label={
-          favorite
-            ? "Remove from favorites"
-            : "Add to favorites"
-        }
-      >
+        aria-label={favorite ? "Remove from favorites" : "Add to favorites"}>
         {favorite ? "★" : "☆"}
       </button>
     </Form>
