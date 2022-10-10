@@ -10,6 +10,7 @@ import Root, {
   action as rootAction,
 } from "./routes/root";
 import Index from "./routes";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "contacts/:contactId/destroy",
         action: destroyAction,
-        errorElement: <div>Erro na ação de destruir!</div>,
+        errorElement: <div>Erro na ação de deletar um contato!</div>,
       },
     ],
   },
