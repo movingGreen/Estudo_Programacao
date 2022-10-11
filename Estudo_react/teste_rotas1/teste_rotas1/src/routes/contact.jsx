@@ -1,8 +1,16 @@
-import { Form, useLoaderData } from "react-router-dom";
-import { getContact } from "../Contacts";
+import { Form, useLoaderData, useFetcher } from "react-router-dom";
+import { getContact, updateContact } from "../Contacts";
 
 export async function loader({ params }) {
   return getContact(params.contactId);
+}
+
+export async function action({ request, params }) {
+  let formData = await request.formData();
+
+  return updateContact(params.contactId, {
+    favorite: formData.get("favorite") === "true",
+  });
 }
 
 export default function Contact() {
@@ -75,16 +83,17 @@ export default function Contact() {
 }
 
 function Favorite({ contact }) {
-  // yes, this is a `let` for later
+  const fetcher = useFetcher();
   let favorite = contact.favorite;
+
   return (
-    <Form method="post">
+    <fetcher.Form method="post">
       <button
         name="favorite"
         value={favorite ? "false" : "true"}
         aria-label={favorite ? "Remove from favorites" : "Add to favorites"}>
         {favorite ? "★" : "☆"}
       </button>
-    </Form>
+    </fetcher.Form>
   );
 }
