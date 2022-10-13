@@ -1,3 +1,4 @@
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
@@ -6,34 +7,43 @@ import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 
-export default function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<Layout />}>
-          <Route
-            index
-            element={<Home />}
-          />
-          <Route
-            path="blogs"
-            element={<Blogs />}
-          />
-          <Route
-            path="contact"
-            element={<Contact />}
-          />
-          <Route
-            path="*"
-            element={<NoPage />}
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <NoPage />,
+    // loader: rootLoader,
+    // action: rootAction,
+    children: [
+      {
+        errorElement: <NoPage />,
+        children: [
+          { index: true, element: <Home /> },
+          {
+            path: "contact",
+            element: <Contact />,
+            // loader: contactLoader,
+            // action: contactAction,
+          },
+          {
+            path: "blogs",
+            element: <Blogs />,
+            // loader: contactLoader,
+            // action: editAction,
+          },
+          // {
+          //   path: "contacts/:contactId/destroy",
+          //   action: destroyAction,
+          //   errorElement: <div>Erro na ação de deletar um contato!</div>,
+          // },
+        ],
+      },
+    ],
+  },
+]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
